@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Marker, InfoWindow } from 'react-google-maps';
+import styles from './OrganizationMarker.module.css';
 
 export class OrganizationMarker extends Component {
   state = {
@@ -49,6 +50,7 @@ export class OrganizationMarker extends Component {
               <h3>{organization.name}</h3>
               <div>{organization.location}</div>
               <div><a href={`tel:${organization.phone}`}>{organization.phone}</a></div>
+              {organization.overview? <div className={styles.overview}>{organization.overview}</div> : <div/>}
             </div>
           </InfoWindow>
         }
